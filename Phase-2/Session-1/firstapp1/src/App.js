@@ -10,10 +10,11 @@ import Toggle from './components/toggle';
 import Form from './components/form';
 import UserInfo from './components/userinfo';
 import ArrayState from './components/arraysstate';
+import Bike from './components/bike';
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
       {/* <HelloWorld/>
       <Greeting/>
       <StyleComponent/>
@@ -22,9 +23,11 @@ function App() {
       <Counter/>
       <Toggle/> 
        <Form/>
-       <UserInfo/>*/}
+       <UserInfo/>
+       <ArrayState/>*/}
 
-       <ArrayState/>
+       
+       <Bike/>
 
        
 
