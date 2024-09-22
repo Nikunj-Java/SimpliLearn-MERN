@@ -5,6 +5,7 @@ import UserCard from './component/userCard';
 import Button from './component/button';
 import Greeting from './component/greeting';
 import Profile from './component/Profile';
+import Login from './component/Login';
 
 function App() {
 
@@ -25,7 +26,9 @@ function App() {
       <Button onClick={handleClick} lebel="Click Me"/>
       <Greeting />
       <Greeting name="Nikunj"/>
-      <Profile name={1234} age={30}/>
+      <Profile name="Nikunj" age={30}/>
+      <Login isLoggedIn={true} name="Nikunj Soni"/>
+      <Login isLoggedIn={false}/>
        
     </div>
   );
