@@ -8,8 +8,11 @@ import Profile from './component/Profile';
 import Login from './component/Login';
 import Form from './component/Form';
 import ActionButton from './component/actionbutton';
+import { useState } from 'react';
 
 function App() {
+
+  const [name,setName]=useState('Nikunj Soni');
 
   const user={
     name:'alice',
@@ -22,6 +25,8 @@ function App() {
   return (
     <div className="container">
 
+      <input type='text' onChange={(e)=>{setName(e.target.value)}} value={name}/>
+
       {/* <User name="Nikunj Soni" email="nikunj@gmail.com"/>
       <User name="Jhon Doe" email="jd@gmail.com"/>
       <UserCard user={user}/>
@@ -30,9 +35,11 @@ function App() {
       <Greeting name="Nikunj"/>
       <Profile name="Nikunj" age={30}/>
       <Login isLoggedIn={true} name="Nikunj Soni"/>
-      <Login isLoggedIn={false}/> */}
-
-      <Form/>
+      <Login isLoggedIn={false}/>
+      <Form/> */}
+     
+     <Greeting name={name}/>
+      
       
        
     </div>
