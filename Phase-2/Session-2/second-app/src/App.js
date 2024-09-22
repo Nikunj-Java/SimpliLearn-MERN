@@ -6,6 +6,7 @@ import Button from './component/button';
 import Greeting from './component/greeting';
 import Profile from './component/Profile';
 import Login from './component/Login';
+import Form from './component/Form';
 
 function App() {
 
@@ -18,9 +19,9 @@ function App() {
     alert('Button Clicked');
   }
   return (
-    <div className="App">
+    <div className="container">
 
-      <User name="Nikunj Soni" email="nikunj@gmail.com"/>
+      {/* <User name="Nikunj Soni" email="nikunj@gmail.com"/>
       <User name="Jhon Doe" email="jd@gmail.com"/>
       <UserCard user={user}/>
       <Button onClick={handleClick} lebel="Click Me"/>
@@ -28,7 +29,9 @@ function App() {
       <Greeting name="Nikunj"/>
       <Profile name="Nikunj" age={30}/>
       <Login isLoggedIn={true} name="Nikunj Soni"/>
-      <Login isLoggedIn={false}/>
+      <Login isLoggedIn={false}/> */}
+
+      <Form/>
        
     </div>
   );
