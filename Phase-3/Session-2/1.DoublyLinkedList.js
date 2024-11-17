@@ -28,6 +28,49 @@ class DoublyLinkedList{
 
     }
 
+    //delete
+    delete(data){
+        if(this.head===null){
+            console.log("List is Empty");
+            return;
+        }
+
+        let current=this.head;
+        //case:1 Deleting the head node
+        if(current.data===data){
+            if(current.next){
+                this.head=current.next;
+                this.head.prev=null; //new head 's previous value must be null
+            }else{
+                //if there is only one node in the list
+                this.head=this.tail=null;
+            }
+            return;
+        }
+
+        //case:2 Traverse and Find the node
+        while(current!==null && current.data!==data){
+            current=current.next;
+        }
+
+        if(current===null){
+            console.log("data not Found in the List");
+            return;
+        }
+
+        //case:3 deleting a middle or last node
+        if(current.next){
+            current.next.prev=current.prev; //updated the next node's  prev pointer
+        }else{
+            //if  it is the last node, update the tail
+            this.tail=current.prev;
+        }
+
+        if(current.prev){
+            current.prev.next=current.next; // updated the  previous node's next pointer
+        }
+    }
+
     //printing Forward
     printListForward(){
         let current= this.head;
@@ -60,8 +103,23 @@ doubleList.append(10);
 doubleList.append(20);
 doubleList.append(30);
 doubleList.append(40);
+doubleList.append(50);
 
 console.log("List in Forward: ");
 doubleList.printListForward();  //output===>>> 10->20->30->40
 console.log("List in Backward: ");
 doubleList.printListBackward();  //output===>>> 10<-20<-30<-40
+
+//delete the data from the list
+
+doubleList.delete(10); 
+console.log("List after Deleting Head, List in Forward:");
+doubleList.printListForward();
+
+doubleList.delete(40); 
+console.log("List after Deleting tail, List in Forward:");
+doubleList.printListForward();
+
+doubleList.delete(30); 
+console.log("List after Deleting Middle Node, List in Forward:");
+doubleList.printListForward();
