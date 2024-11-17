@@ -26,6 +26,36 @@ class LinkedList{
             current.next=newNode;
         }
     }
+
+    //delete Data in Linked List
+
+    delete(data){
+        if(this.head===null){
+            console.log("The List is Empty");
+            return;
+        }
+
+        //delete the node is Head node
+        if(this.head.data===data){
+            this.head=this.head.next;
+            return;
+        }
+
+        let current=this.head;
+        //traverse the list to find the node before the one to delete
+        while(current.next !==null && current.next.data !==data){
+            current=current.next;
+        }
+
+        if(current.next === null){
+            console.log("Data Found in the List");
+            return;
+        }
+
+        //delete the node by skipping it
+        current.next=current.next.next;
+
+    }
     printList(){
         let current=this.head;
         let result=[];
@@ -35,6 +65,7 @@ class LinkedList{
         }
         console.log(result.join('->')); //printing the  list
     }
+
 }
 
 //main method
@@ -47,5 +78,12 @@ list.append(30);
 list.append(40);
 list.append(50);
 
+console.log("Before Deletion");
 list.printList();
 
+list.delete(20);
+
+console.log("After Deletion");
+list.printList();
+
+list.delete(100);
