@@ -29,20 +29,22 @@ class LinkedList{
 
     //delete Data in Linked List
 
-    delete(data){
-        if(this.head===null){
+    delete(data){       //20
+        if(this.head===null){  //is head is empty? if it is empty it will not delete and return "list id empty"
             console.log("The List is Empty");
             return;
         }
 
         //delete the node is Head node
-        if(this.head.data===data){
+        //if the data(10) which we have passed  is equals to head node then it will reaign the next node to head node
+        if(this.head.data===data){ 
             this.head=this.head.next;
             return;
         }
 
         let current=this.head;
         //traverse the list to find the node before the one to delete
+        //traversing we can use to asign address to the next node's address to the new head node
         while(current.next !==null && current.next.data !==data){
             current=current.next;
         }
