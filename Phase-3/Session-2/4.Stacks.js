@@ -74,3 +74,6 @@ stack.pop();
 stack.pop();
 
 console.log("Is the Stack is Empty?",stack.isEmpty());
+
+
+ 
