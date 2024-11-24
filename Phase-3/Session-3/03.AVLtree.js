@@ -27,7 +27,7 @@ class AVLTree{
     //rigth rotate
     rightRotate(y){
         const x = y.left;
-        const T = x.right;
+        const T = x.right; //preserved node without rotation 
 
         x.right = y;
         y.left = T;
