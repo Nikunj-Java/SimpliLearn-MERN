@@ -2,8 +2,8 @@
 
 function merge(arr,l,m,r){
 
-    var n1=m-l+1;
-    var n2=r-m;
+    var n1=m - l + 1;
+    var n2=r - m;
 
     //create two temp array
     var L= new Array(n1);
@@ -12,17 +12,17 @@ function merge(arr,l,m,r){
     //copy the data to temp L[]. R[]
 
     for(var i = 0;i < n1; i++)
-        L[i] = arr[l+i];
-    for(var j=0;j < n2; j++)
+        L[i] = arr[l + i];
+    for(var j=0; j < n2; j++)
         R[j] = arr[m + 1 + j];
 
     //merge temp arrays back to arr[l,,,,,r];
 
-    var i=0; //initial  index of first sub-arrray
+    var i = 0; //initial  index of first sub-arrray
 
-    var j=0; //initial index of merger array
+    var j = 0; //initial index of merger array
 
-    var k=l //initial of merge sub array
+    var k = l //initial of merge sub array
 
     while(i < n1 && j <n2){
             if(L[i] <= R[j]){
@@ -33,6 +33,7 @@ function merge(arr,l,m,r){
                 j++;
             }
             k++;
+        }
 
             //copy the remaining elements of L[] if there are any
             while ( i < n1){
@@ -47,7 +48,7 @@ function merge(arr,l,m,r){
                 j++;
                 k++;
             }
-    }
+    
 
 }
 
