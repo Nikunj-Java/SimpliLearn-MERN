@@ -16,8 +16,9 @@ function bblSort(arr){
                 arr[j+1]=temp;
                 
             }
-             
+           
         }
+        console.log(`Step: ${i+1} : [${arr.join(",")}]`);  
     }
     console.log(arr);
 }
