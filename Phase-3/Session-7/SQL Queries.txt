@@ -1,0 +1,18 @@
+
+
+***************************************************************************
+MYSQL Queries
+***************************************************************************
+1.get the list of all databases
+	> show databases
+2. Create Database
+	> create database name_of_your_databse
+3. use the newly created databse
+	> use name_of_your_databse
+4. create table in database
+	>create table eproduct(id bigint primary key auto_increment,name varchar(100),price decimal(10,2),date_added timestamp default now());
+
+5. get all the tables in a databse;
+	> show tables
+6. get the description of table
+	> describe table_name
