@@ -36,4 +36,33 @@ MYSQL Queries
 	> delete from eproduct where name="Vio Laptop";
 12. delete Entire table	
 	> drop table eproduct;
+
+13. Inserting Multiple Records
+	> insert into eproduct(name,price) value("Apple",180000),("Android",50000),("Samsung",99000);
+
+14. filter by query
+	> select * from eproduct order by date_added ASC;
+	> select * from eproduct order by date_added DESC;
+	> select * from eproduct order by id ASC;
+	> select * from eproduct order by id DESC;
+
+	lets create another table	
+	
+	>create table students(id bigint primary key auto_increment,name varchar(100),age int,grade decimal(10,2),major varchar(50));
+	lets insert some records
+	> insert into students(name,age,grade,major) values ('Alice',20,3.5,'Physics'),('Bob',22,3.7,'Chemistry'),('Charlie',22,3.2,'Mathematics'),('Diana',23,3.8,'Mathematics');
+
+	filter using ORDER BY
+	> select * from students ORDER BY grade DESC
+15. DISTINCT QUERY
+	> SELECT DISTINCT major FROM students;
+
+16. Use of COUNT in MYSQL
+	> select major,COUNT(*) from students GROUP BY major;
+	
+
+
+
 to open mysql in LAB: sudo mysql -u root
+
+	
