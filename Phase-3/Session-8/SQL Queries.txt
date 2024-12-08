@@ -59,7 +59,40 @@ MYSQL Queries
 
 16. Use of COUNT in MYSQL
 	> select major,COUNT(*) from students GROUP BY major;
+
+17. TCL COMMANDS (TRANSACTION CONTROL COMMANDS) are used to manage databse transaction and ensures data integrity. These commands allows you to commit, rollback and control transaction points.
+
+
+	A. let's understand with the help of below table:
+		> create table accounts(id int auto_increment primary key, name varchar(50), balance decimal(10,2));
+	B. insert records
+		> insert into accounts (name,balance) values('Nikunj Soni',1000.00),('Alex Jhon',500.00);
+	C. START TRANSACTION
+		> START TRANSACTION
+	D. update accounts set balance=balance-200 where name='Nikunj Soni';
+	E. update accounts set balance=balance+200 where name='Alex Jhon';
+	F. commit;
 	
+	G. Create Save Point for Rollback the Transaction
+		> SAVEPOINT sp1;
+		> update accounts set balance=balance-50.00 where name='Nikunj Soni';
+		> rollback to sp1;
+
+18. working with SubQueries   In DATABASE;
+
+	> create table courses(course_id int auto_increment primary key, course_name varchar(100),instructor varchar(100));
+	> create table students(student_id int auto_increment primary key,name varchar(100), major varchar(100));
+	> create table enrollments(enrollment_id int auto_increment primary key, student_id int, course_id int, foreign key(student_id) references student(student_id),foreign key(course_id) references courses(course_id));
+	
+	Lets Insert Some data
+	> insert into students(name,major) values('Alice','Computer Science'),('Bob','Mathematics');
+	> insert into courses(course_name,instructor) values('Database System','Nikunj Soni'),('Calculus','Dr.Jones');
+
+	let's insert data with sub queries
+	 
+	> select s.name from students s;
+	> select c.course_name from courses s;
+	> select * from students s  join courses c on c.course_id=s.student_id;
 
 
 
