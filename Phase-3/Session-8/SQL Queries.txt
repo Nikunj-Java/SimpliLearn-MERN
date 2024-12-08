@@ -16,3 +16,24 @@ MYSQL Queries
 	> show tables
 6. get the description of table
 	> describe table_name
+7. insert record in database;
+	> insert into eproduct(name,price) value("Apple",80000);
+	> insert into eproduct(name,price) value("Lenoveo ThinkPad",120000);
+	> insert into eproduct(name,price) value("Acer Laptop",75000);
+	> insert into eproduct(name,price) value("Vio Laptop",69000);
+	> insert into eproduct(name,price) value("Samsung",34000);
+8. retrieve all products 
+	> select * from eproduct;
+9. retrirve the product by id(filter by query)
+	> select * from eproduct where id=3;
+	> select * from eproduct where name="Apple";
+
+10. Update the record
+	> update eproduct set name="Apple Mac Book Air" where id=1;
+	> update eproduct set name="Samsung Galaxy Ultra" where id=5;
+11. Delete record
+	> delete from eproduct where id=5;
+	> delete from eproduct where name="Vio Laptop";
+12. delete Entire table	
+	> drop table eproduct;
+to open mysql in LAB: sudo mysql -u root
