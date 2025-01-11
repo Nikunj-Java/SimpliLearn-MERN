@@ -252,3 +252,13 @@ eg: db.Student.insertMany(
   }
 ]
 )
+
+
+6. Fetch Records 
+	A. fetch all record
+		>db.student.find()
+	B. find a particular Record In the Database with filter
+		> db.student.find({name:"nikunj soni"})
+		> db.student.find({email:"nikunj@gmail.com"})
+	C. Fetch a Particular Record
+		> db.student.findOne({email:"nikunj@gmail.com"})
