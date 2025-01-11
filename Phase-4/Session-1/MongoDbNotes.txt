@@ -262,3 +262,22 @@ eg: db.Student.insertMany(
 		> db.student.find({email:"nikunj@gmail.com"})
 	C. Fetch a Particular Record
 		> db.student.findOne({email:"nikunj@gmail.com"})
+	D. find particular value from all 
+		> db.student.find({},{name:1})
+		> db.student.find({},{email:1})
+		> db.student.find({},{country:1})
+	E. find value with particular result
+		> db.student.find({},{name:1, country:1})
+	F. find the result without ID
+		> db.student.find({},{name:1, country:1,_id:0}
+
+7. Update Records in Mongo Db
+	A. Update a single Record
+		>db.student.updateOne(
+  { email: "nikunjsoni@gmail.com" },
+  { $set: { name: "NIKUNJ SONI" } }
+);
+
+		> _id: ObjectId('67827e86730616d4516e54ba')
+
+)
