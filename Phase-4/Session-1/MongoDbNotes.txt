@@ -278,6 +278,4 @@ eg: db.Student.insertMany(
   { $set: { name: "NIKUNJ SONI" } }
 );
 
-		> _id: ObjectId('67827e86730616d4516e54ba')
-
-)
+		>db.student.updateOne( {_id: ObjectId('67827e86730616d4516e54ba')},{ $set: { name: "NIKUNJ SONI" } })
