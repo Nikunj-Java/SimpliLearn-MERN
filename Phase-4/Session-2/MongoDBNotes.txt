@@ -1,0 +1,6 @@
+
+
+1. Update Many Records in Database
+
+	> db.Student.updateMany({ "address.zipcode":"31428-2261"},{ $set: { "email": "testmail@gmail.com"}})
+	> db.Student.updateMany({ "address.zipcode":"31428-2261"},{ $set: { "email": "testmail@gmail.com", "name": "testuser"}})
