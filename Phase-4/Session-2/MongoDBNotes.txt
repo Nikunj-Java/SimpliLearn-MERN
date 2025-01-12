@@ -36,5 +36,9 @@
 	- drop the index
 	>db.Student.dropIndex("name_1")
 	
-	use:
+	use:1
 	>db.Student.find().sort({name:1})
+
+	use:2 
+	> db.Student.createIndex({name:"text"})
+	> db.Student.find({ $text:{ $search:"xyz"}})
