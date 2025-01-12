@@ -42,3 +42,27 @@
 	use:2 
 	> db.Student.createIndex({name:"text"})
 	> db.Student.find({ $text:{ $search:"xyz"}})
+6. Related Operators
+	> $gt: greater than
+	> $gte: greater than or Equals to
+	> $lte: less than or Equals  to
+	> $lt: Less than
+	> $eq: Equals to
+	> $ne not equals to
+7. Get Collection Information
+	>db.getCollectionInfos({name:"Student"})
+8.Agrregation:
+	create Many records
+	[
+	 {"name":"Nikunj Soni", "subject":"Physics","marks":49},
+{"name":"Nikunj Soni", "subject":"Chemistry","marks":89},
+{"name":"Nikunj Soni", "subject":"Physics","marks":78},
+{"name":"Nikunj Soni", "subject":"Physics","marks":49},
+{"name":"Nikunj Soni", "subject":"Chemistry","marks":89},
+{"name":"Nikunj Soni", "subject":"Physics","marks":78}
+	]
+
+	>db.Student.aggregate([{ $match: { name: "Nikunj Soni" } },{$group: { _id: null,total: { $sum: "$marks" } } }])
+	>db.Student.aggregate([{ $match: { subject: "Physics" } },{$group: { _id: null,total: { $sum: "$marks" } } }])
+	>db.Student.aggregate([{ $match: { subject: "Chemistry" } },{$group: { _id: null,total: { $sum: "$marks" } } }])
+	 
