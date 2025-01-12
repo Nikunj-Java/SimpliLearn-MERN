@@ -22,4 +22,19 @@
 3. Replace Records
 	>db.demo.replaceOne({condition})
 	eg: db.demo.replaceOne({"name":"Alice"},{"name":"Alice","age":27,"city":"mumbai"})
+
+4. Delete of Records
+	>db.demo.deleteOne({"name":"Alice"});
+
+	>db.demo.deleteMany({ age: { $lt:30 } })
+
+5. Creating an Index for Faster Query Management
+	- also known as improve query performance
+	> db.Student.createIndex({name:1})
+	- get an index
+	> db.Student.getIndexes()
+	- drop the index
+	>db.Student.dropIndex("name_1")
 	
+	use:
+	>db.Student.find().sort({name:1})
