@@ -4,3 +4,22 @@
 
 	> db.Student.updateMany({ "address.zipcode":"31428-2261"},{ $set: { "email": "testmail@gmail.com"}})
 	> db.Student.updateMany({ "address.zipcode":"31428-2261"},{ $set: { "email": "testmail@gmail.com", "name": "testuser"}})
+
+2. Find Records
+
+	[
+	 {"name":"Alice", "age":24},
+{"name":"Minal", "age":35},
+{"name":"Charlie", "age":30}
+	]
+
+	>db.demo.find({ age: { $gte:25 }});
+	
+	>db.demo.find({ age: { $gte:30 }});
+	
+	>db.demo.find({ age: { $gte:35 }});
+
+3. Replace Records
+	>db.demo.replaceOne({condition})
+	eg: db.demo.replaceOne({"name":"Alice"},{"name":"Alice","age":27,"city":"mumbai"})
+	
