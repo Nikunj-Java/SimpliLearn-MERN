@@ -32,3 +32,75 @@ Uninstall a Package
 > npm uninstall package-name (remove local depenendecy)
 > npm uninstall package-name --save-dev (remove developement dependency)
 > npm uninstall package-name -g (remove global dependency)
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+CREATING NODE JS APPLICATION
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+1. goto> cmd> open your folder> execute below command
+	> npm init
+this will ask you  few basic details of  your project, kindly provide it.
+once it is done package.json file will be prepared
+
+package.json
+--------------
+{
+  "name": "myfirstnodeapp",
+  "version": "1.0.0",
+  "description": "first node app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nikunj soni",
+  "license": "ISC",
+   
+}
+
+2. now to create a server for your node app we need http dependency
+lets install http
+goto> cmd> execute below command
+> npm install http
+
+now check your package.json file it has a depenedency section
+
+package.json
+------------------
+{
+  "name": "myfirstnodeapp",
+  "version": "1.0.0",
+  "description": "first node app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nikunj soni",
+  "license": "ISC",
+  "dependencies": {
+    "http": "^0.0.1-security"
+
+  }
+}
+
+
+3. lets create index.js file
+
+index.js file
+-----------------
+const http=require('http')
+const SERVER_PORT= 3000;
+const SERVER_HOSTNAME="127.0.0.1";
+const server =http.createServer((req,resp)=>{
+    resp.statusCode=200;
+    resp.setHeader("Content-Type","text/plain")
+    resp.end("Welcome to My First Node js App")
+});
+
+server.listen(SERVER_PORT,SERVER_HOSTNAME,()=>{
+    console.log(`Server is up and Running! listning to portNo ${SERVER_PORT} With Name ${SERVER_HOSTNAME}`  );
+});
+
+save it and got to cmd> node index.js
+
+4. goto > browser> localhost:3000
+check the output
