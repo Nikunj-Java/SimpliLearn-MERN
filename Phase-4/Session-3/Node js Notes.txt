@@ -1,0 +1,34 @@
+Download Link: http://nodejs.org/en/download
+
+to check the version:
+> node -v
+
+we can install any packages using npm as it comes along with node
+
+to check the version
+> npm -v
+
+we can install any packages in two ways
+	1. Globally
+	2. Locally
+
+1. Globally
+=========================
+> npm install package-name -g
+
+where -g stands for global installation
+
+let's download few packages
+
+1. npm i sass -g
+	check version: sass --version
+2. npm i typescript -g
+	check version:tsc -v
+
+
+Uninstall a Package
+----------------------
+
+> npm uninstall package-name (remove local depenendecy)
+> npm uninstall package-name --save-dev (remove developement dependency)
+> npm uninstall package-name -g (remove global dependency)

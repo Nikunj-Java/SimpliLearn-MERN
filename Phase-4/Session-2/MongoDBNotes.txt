@@ -66,3 +66,15 @@
 	>db.Student.aggregate([{ $match: { subject: "Physics" } },{$group: { _id: null,total: { $sum: "$marks" } } }])
 	>db.Student.aggregate([{ $match: { subject: "Chemistry" } },{$group: { _id: null,total: { $sum: "$marks" } } }])
 	 
+
+
+Note:
+	1.$match: used for filtering Documents 
+	2.$group: used for group documents based on some valuues
+	3.$sort: used to sort the documents and rearranging them
+	4.$skip: skip n number of record in documents
+	5.$limit: used to pass first n number of documents  thus limiting them
+	6.$sum: its sums the numeric value for the document
+	7.$count: gives the total numbers of documents
+	8.$min: get the minimun value of documents
+	9.$max: get the maximun value of document
