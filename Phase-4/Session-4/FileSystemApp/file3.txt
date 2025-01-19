@@ -1,0 +1,8 @@
+Welcome to File 3
+
+ Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+  Sequi quaerat soluta accusamus architecto eaque ea? Nam dignissimos saepe, beatae sint eaque iste laboriosam commodi,
+  facilis mollitia aut nihil facere vero!
+
+
+  all this programs will be executed one after another only

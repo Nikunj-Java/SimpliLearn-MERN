@@ -1,0 +1,10 @@
+step:1 Create Forlder
+Step:2 move to that folder and start cmd
+Step:3 npm init -y 
+        this will generate package.json file
+Step:4 write node js code
+
+Step:5 run the program
+    node index.js
+Hello My Name is Nikunj
+i am MERN Stack Developer
