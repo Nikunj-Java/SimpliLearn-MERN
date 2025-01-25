@@ -49,6 +49,22 @@ db.query(sql,[name,email,age],(err,result)=>{
 });
 });
 
+//2 get all records from the database
+
+app.get('/students',(req,res)=>{
+    //const {name,email,age}=req.body;
+    const sql='SELECT * FROM students';
+    db.query(sql,(err,result)=>{
+        if(err) return res.status(500).json({error:err.message});
+        res.json(result);
+    });
+    });
+    // GET THE USER BY ID
+    //task to delete user by id
+    //task to update user by id
+
+
+
 app.listen(PORT,()=>{
     console.log(`server is running and up on http://localhost:${PORT}`);
 })
