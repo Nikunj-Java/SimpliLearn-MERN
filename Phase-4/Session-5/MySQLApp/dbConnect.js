@@ -29,3 +29,26 @@ db.connect((err)=>{
     console.log('Connected to MySql Database');
     
 });
+
+//create table
+db.query(`CREATE TABLE IF NOT EXISTS students
+    ( id INT AUTO_INCREMENT PRIMARY KEY,
+     name VARCHAR(100),
+     email VARCHAR(100),age INT)`,(err)=>{
+    if(err) throw err;
+    console.log("Student Table is Created and Ready For the Use.");
+});
+
+//1. create record in the database
+app.post('/students',(req,res)=>{
+const {name,email,age}=req.body;
+const sql='INSERT INTO students (name,email,age) VALUES (?,?,?)';
+db.query(sql,[name,email,age],(err,result)=>{
+    if(err) return res.status(500).json({error:err.message});
+    res.status(201).json({message:'UserCreated',id:result.insertId});
+});
+});
+
+app.listen(PORT,()=>{
+    console.log(`server is running and up on http://localhost:${PORT}`);
+})
