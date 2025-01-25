@@ -43,3 +43,19 @@ app.post('/student',async(req,res)=>{
         res.status(500).json({error:err.message})
     }
 });
+
+//get user
+app.get('/student',async(req,res)=>{
+
+    try {
+        const student= await myStudent.find();
+        res.json(student);
+    } catch (error) {
+        res.status(500).json({error:err.message});
+    }
+    
+});
+
+//get user by id
+//update user by id
+//delete user by id
