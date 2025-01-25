@@ -22,3 +22,24 @@ mongoose
 app.listen(PORT,()=>{
     console.log(`server is running and up on http://localhost:${PORT}`);
 });
+
+//user schema--model
+const userSchema= new mongoose.Schema({
+    name:{type:String,required:true},
+    email:{type:String,required:true,unique:true},
+    age:{type:Number,required:true},
+});
+
+const myStudent=mongoose.model('myStudent',userSchema);
+
+//create user
+app.post('/student',async(req,res)=>{
+    try {
+        const {name,email,age}=req.body;
+        const student= new myStudent({name,email,age});
+        await student.save();
+        res.status(201).json({message:'student Created!',student});
+    } catch (error) {
+        res.status(500).json({error:err.message})
+    }
+});
