@@ -1,0 +1,12 @@
+Create New Project
+	|
+	|----Parent.js	
+	|
+	|----child.js
+	|
+	|---node_modules
+	|
+	|---package.json
+
+	install express and axios for creating http request
+	
