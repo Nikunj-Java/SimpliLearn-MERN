@@ -64,7 +64,7 @@ app.get('/student/:id',async(req,res)=>{
         const { id }=req.params;
         const student= await myStudent.findById(id);
         if(!student){
-            return res.status(404).json({message:'User Not Found'});
+            return res.status(404).json({message:'Student Not Found'});
         }
         res.json(student);
     } catch (error) {
@@ -72,6 +72,26 @@ app.get('/student/:id',async(req,res)=>{
     }
     
 });
-
 //update user by id
+app.put('/student/:id',async(req,res)=>{
+
+    try {
+        const { id }=req.params;
+        const {name,email,age}=req.body;
+        const student= await myStudent.findByIdAndUpdate( 
+            id,
+            {name,email,age},
+            {new:true,runValidators:true}
+        );
+        
+        if(!student){
+            return res.status(404).json({message:'Student Not Found'});
+        }
+        res.json({message:'Student updated!',student});
+    } catch (error) {
+        res.status(500).json({error:err.message});
+    }
+    
+});
 //delete user by id
+//TASK: 
