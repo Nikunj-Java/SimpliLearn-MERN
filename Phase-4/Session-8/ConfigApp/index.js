@@ -1,5 +1,6 @@
 const express=require('express');
 const dotenv=require('dotenv');
+//npm install dotenv
 dotenv.config();
 
 const app=express();
@@ -10,5 +11,5 @@ app.get('/',(req,res)=>{
 });
 
 app.listen(process.env.PORT,()=>{
-    console.log(`server is running and up on port: ${process.env.NODE_ENV}`);
+    console.log(`server is running and up on port: ${process.env.PORT}`);
 })
