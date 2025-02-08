@@ -1,0 +1,47 @@
+STEP:1 create project Environment
+
+> npm init -y
+
+> npm install express mongoose dotenv nodemon
+
+update package.json file
+
+"scripts": {
+    "start": "nodemon server.js",
+    
+  }
+
+
+
+
+STEP:2 create dbConfig.js file
+
+STEP:3 create UserModel file
+
+STEP:4 Create Controller
+
+STEP:5 Create Routes
+
+STEP:6 Create Server.js File
+
+
+> npm start
+
+
+
+goto> postmen
+
+http://localhost:4000/api/user/
+
+
+add json data 
+
+{
+    "name":"Akshata Arjun Pawar",
+    "email":"aap@gmail.com",
+    "username":"AAP",
+    "password":"AAP@123"
+}
+
+
+click on send and check the status in MongoDb and Postmen
