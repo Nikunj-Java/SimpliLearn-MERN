@@ -25,8 +25,43 @@ const addUser= async (req,res)=>{
         })
     }
 }
+
+//get all users
+const getAllUsers=async(req,res)=>{
+    try {
+        
+        const users=await UserModel.find(); //fetch all the records from Database
+        res.status(200).json({
+            message:'User Data Fetched Successfully!',
+            data:users
+        });
+    } catch (error) {
+        res.status(500).json({
+            message:error.message
+        })
+    }
+}
  
+//get user by id
+const getUserById=async (req,res)=>{
+    const {id}=req.params;
+    try {
+        
+        const users=await UserModel.findById(id); //fetch all the records from Database
+        res.status(200).json({
+            message:'User Data Fetched Successfully!',
+            data:users
+        });
+    } catch (error) {
+        res.status(500).json({
+            message:error.message
+        })
+    }
+     
+}
 
 
 
-module.exports={addUser}
+
+
+module.exports={addUser,getAllUsers,getUserById}
