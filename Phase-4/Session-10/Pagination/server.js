@@ -20,6 +20,10 @@ app.use((err,req,res,next)=>{
     console.log(err);
 })
 
-app.listen(process.env.PORT,()=>{
-    console.log(`Server is running and Up on PORT NO: ${process.env.PORT}`);
-})
+// app.listen(process.env.PORT,()=>{
+//     console.log(`Server is running and Up on PORT NO: ${process.env.PORT}`);
+// })
+
+
+module.exports=app;
+ 

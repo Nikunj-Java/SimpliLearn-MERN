@@ -8,3 +8,5 @@ test('adds 2 + 3 to equals 5',()=>{
 test('adds 5 x 4 to equals 20',()=>{
     expect(multiply(5,4)).toBe(20);
 });
+
+//npm install --save-dev jest
