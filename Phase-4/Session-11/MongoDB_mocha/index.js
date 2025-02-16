@@ -10,6 +10,14 @@ app.use(express.json());
 mongoose.connect(process.env.MONGO_URI).then(()=>console.log('Connected')).catch((err)=>{console.log(err)});
 
 
+const ItemSchema = new mongoose.Schema({name:String,price:Number});
+const Item =mongoose.model('Item',ItemSchema);
+
+app.post('/api/items',async(req,res)=>{
+    const newItems= await Item.create(req.body);
+    res.status(201).json(newItems);
+})
+
 app.listen(process.env.PORT,()=>{
     console.log(`Server is running and up! on PORT No:${process.env.PORT}`)
 });
