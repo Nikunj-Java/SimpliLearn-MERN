@@ -47,11 +47,42 @@ app.get('/stocks/all',async(req,res)=>{
     } catch (error) {
         res.status(500).json({message:'Failed to fetch stocks list',details:error.response?.data || error.message});
     }
+});
+//create the same
+//create an api to get stock by symbols
+//app.get('/stocks/:symbol')
+
+//GET STOCK BY ID: USE:     /quote
+app.get('/stocks/:symbol',async(req,res)=>{
+    const {symbol}=req.params;
+
+    try {
+        const response=await axios.get(`${FINNHUB_BASE_URL}/quote`,{
+            params:{ symbol, token:FINNHUB_API_KEY }, //mendatory
+            headers:{'X-Finnhub-Token':FINNHUB_API_KEY }//mendatory
+        });
+        res.json(response.data);
+    } catch (error) {
+        res.status(500).json({message:'Failed to fetch stocks list',details:error.response?.data || error.message});
+    }
 })
 
-//create the same
-//create an api to get stock by id
+
+//get Historical Data
+
+//API: baseurl/stock/candle
+
+
 
 app.listen(PORT,()=>{
     console.log(`Server is running and Up! on PORT: ${PORT}`)
 });
+
+
+//note
+//1. get all data
+//     base_url/stock/symbol
+//2. get stock by symbol
+//     base_url/quote
+//3. Historical Data
+//     base_url/stock/candle
