@@ -47,8 +47,8 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
     try {
         const id= req.params.id;
-        const {name,password}=req.body;
-        await UserModel.findByIdAndUpdate(id,{name,password});
+        const {name, username, email, password}=req.body;
+        await UserModel.findByIdAndUpdate(id,{name, username, email, password});
         res.status(200).send({message:'User updated successfully'});
     } catch (error) {
         console.log(error);

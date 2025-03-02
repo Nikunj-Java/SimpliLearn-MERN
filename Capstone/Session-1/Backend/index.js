@@ -13,6 +13,7 @@ app.use(cors()); //permission for frontend
 connectDB();
 
 app.use('/api/user',require('./routes/userroutes'));
+//app.use('/api/cabs',require('./routes/cabroutes'));
 
 const PORT=process.env.PORT;
 
