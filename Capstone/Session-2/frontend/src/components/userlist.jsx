@@ -17,13 +17,22 @@ function UserList() {
     useEffect(()=>{
         fetchData()
     },[])//it runs only once due to []
+
+    const deleteUser=async(id)=>{
+        //your code 
+        //call API too delete User By ID
+
+        await axios.delete('http://localhost:5000/api/user/'+id);
+        alert('User Deleted!');
+        fetchData();
+    }
      
     return ( 
         <div>
             <h3>User List Component</h3>
             <table className="table table-bordered table-striped">
                 <thead>
-                    <tr><th>Name</th><th>Email</th><th>UserName</th></tr>
+                    <tr><th>Name</th><th>Email</th><th>UserName</th><th>Operation</th></tr>
                 </thead>
                 <tbody>
                     {
@@ -32,6 +41,7 @@ function UserList() {
                                 <td>{item.name}</td>
                                 <td>{item.email}</td>
                                 <td>{item.username}</td>
+                                <td><button className='btn btn-danger'onClick={()=>deleteUser(item._id)}>X</button></td>
                                  </tr>
                         ))
                     }
