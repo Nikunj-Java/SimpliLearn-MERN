@@ -6,7 +6,7 @@ function UserForm({fetchData}){
     const [user,setUser]=useState({name:'',email:'',username:'',password:''});
     const handleSubmit=async(e)=>{
         e.preventDefault();
-        const resp=await axios.post('http://localhost:/api/user/',user);
+        const resp=await axios.post('http://localhost:5000/api/user/',user);
         console.log(resp);
         if(resp.status==201){
             alert('User Registered Successfully');
